@@ -3,12 +3,12 @@
 Summary:	Portal discussion for Plone
 Summary(pl):	Portal dyskusyjny dla Plone
 Name:		Zope-%{zope_subname}
-Version:	1.4.2
+Version:	1.4.3
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tar.gz
-# Source0-md5:	abbb1075a7190b1073f67a210e7fc9cb
+# Source0-md5:	82896bbbf7f036d20dfcb6fc3c59b801
 URL:		http://www.cmfboard.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 %pyrequires_eq	python-modules
@@ -36,12 +36,13 @@ Portal dyskusyjny dla Plone.
 %build
 rm -rf skins/cmfboard/{personalize_form.pt,personalize_form.pt.properties}
 rm -rf skins/cmfboard/fcMaillist/{register.py,validate_personalize.py,validate_registration.py}
+rm -rf i18n/{build.bat,*.exe}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 
-cp -af {Extensions,i18n,skins,tests,zpt,*.py,*.gif,VERSION.txt} $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -af {Extensions,i18n,skins,zpt,*.py,*.gif,VERSION.txt} $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %py_comp $RPM_BUILD_ROOT%{_datadir}/%{name}
 %py_ocomp $RPM_BUILD_ROOT%{_datadir}/%{name}
