@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 %define		zope_subname	CMFBoard
 Summary:	Portal discussion for Plone
 Summary(pl):	Portal dyskusyjny dla Plone
