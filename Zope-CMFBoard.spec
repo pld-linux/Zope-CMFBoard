@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tar.gz
 # Source0-md5:	92559180668929f5ce703b78bc0c49b0
 URL:		http://www.cmfboard.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
+BuildRequires:  python
 %pyrequires_eq	python-modules
 Requires:	Zope
 Requires:	Zope-BTreeFolder2
