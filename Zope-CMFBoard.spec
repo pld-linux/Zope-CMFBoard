@@ -3,12 +3,12 @@
 Summary:	Portal discussion for Plone
 Summary(pl):	Portal dyskusyjny dla Plone
 Name:		Zope-%{zope_subname}
-Version:	2.0
+Version:	2.1
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}final.tar.gz
-# Source0-md5:	0b604d3b14b22e273e7a41973c702b46
+# Source0-md5:	dbb424046222bd9a26e8b729b3a49610
 URL:		http://www.cmfboard.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 %pyrequires_eq	python-modules
@@ -18,6 +18,7 @@ Requires:	Zope-CMFPlone >= 2.0
 Requires:	Zope-archetypes >= 1.2
 Requires:	Zope-CMFMPoll
 Requires:	Zope-CMFMessage
+Requires:	Zope-PortalTransport
 Requires:	python-Imaging
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
