@@ -3,12 +3,12 @@
 Summary:	Portal discussion for Plone
 Summary(pl):	Portal dyskusyjny dla Plone
 Name:		Zope-%{zope_subname}
-Version:	1.4
+Version:	1.4.2
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tar.gz
-# Source0-md5:	01d18c814b477874dcf2efda7cb67190
+# Source0-md5:	abbb1075a7190b1073f67a210e7fc9cb
 URL:		http://www.cmfboard.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 %pyrequires_eq	python-modules
@@ -67,5 +67,5 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc docs/* CHANGES.txt CREDITS.txt README.txt TODO.txt
+%doc docs/* CHANGES.txt CREDITS.txt README.txt TODO.txt BUGS.txt
 %{_datadir}/%{name}
