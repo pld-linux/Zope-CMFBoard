@@ -3,7 +3,7 @@ Summary:	Portal discussion for Plone
 Summary(pl):	Portal dyskusyjny dla Plone
 Name:		Zope-%{zope_subname}
 Version:	2.1.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tar.gz
