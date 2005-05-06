@@ -2,12 +2,12 @@
 Summary:	Portal discussion for Plone
 Summary(pl):	Portal dyskusyjny dla Plone
 Name:		Zope-%{zope_subname}
-Version:	2.1.4
+Version:	2.2
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tar.gz
-# Source0-md5:	ba42e75dbe2145f3b8ed7157abc94d6d
+# Source0-md5:	db18272210a32fa1043c0c94c7826ead
 URL:		http://www.cmfboard.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 BuildRequires:	python
@@ -17,8 +17,9 @@ Requires:	Zope-BTreeFolder2
 Requires:	Zope-CMF
 Requires:	Zope-CMFPlone >= 2.0
 Requires:	Zope-CMFMessage
+Requires:	Zope-PlacelessTranslationService
 Requires:	Zope-PortalTransport
-Requires:	Zope-archetypes >= 1.2
+Requires:	Zope-archetypes >= 1.2.5
 Requires:	python-Imaging
 Requires:	python-PyXML
 BuildArch:	noarch
@@ -44,7 +45,7 @@ rm -rf i18n/{build.bat,*.exe}
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 
-cp -af {Extensions,i18n,skins,uihelpers,zpt,*.py,*.gif,VERSION.txt} $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -af {Extensions,i18n,skins,uihelpers,zpt,*.py,*.gif,version.txt} $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %py_comp $RPM_BUILD_ROOT%{_datadir}/%{name}
 %py_ocomp $RPM_BUILD_ROOT%{_datadir}/%{name}
