@@ -9,23 +9,24 @@ Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tar.gz
 # Source0-md5:	c9e758f81525e49a89871ba79af61588
 URL:		http://www.cmfboard.org/
-Requires(post,postun):	/usr/sbin/installzopeproduct
 BuildRequires:	python
+BuildRequires:	rpmbuild(macros) >= 1.268
+Requires(post,postun):	/usr/sbin/installzopeproduct
 %pyrequires_eq	python-modules
 Requires:	Zope
 Requires:	Zope-BTreeFolder2
 Requires:	Zope-CMF
-Requires:	Zope-CMFPlone >= 2.0
 Requires:	Zope-CMFMessage
+Requires:	Zope-CMFPlone >= 2.0
 Requires:	Zope-PlacelessTranslationService
 Requires:	Zope-PortalTransport
 Requires:	Zope-archetypes >= 1.2.5
 Requires:	python-Imaging
 Requires:	python-PyXML
-BuildArch:	noarch
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Conflicts:	CMF
 Conflicts:	Plone
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Portal discussion for Plone.
@@ -57,16 +58,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /usr/sbin/installzopeproduct %{_datadir}/%{name} %{zope_subname}
-if [ -f /var/lock/subsys/zope ]; then
-	/etc/rc.d/init.d/zope restart >&2
-fi
+%service -q zope restart
 
 %postun
 if [ "$1" = "0" ]; then
 	/usr/sbin/installzopeproduct -d %{zope_subname}
-	if [ -f /var/lock/subsys/zope ]; then
-		/etc/rc.d/init.d/zope restart >&2
-	fi
+	%service -q zope restart
 fi
 
 %files
