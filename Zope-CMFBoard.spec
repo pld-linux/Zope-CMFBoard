@@ -1,6 +1,6 @@
 %define		zope_subname	CMFBoard
 Summary:	Portal discussion for Plone
-Summary(pl):	Portal dyskusyjny dla Plone
+Summary(pl.UTF-8):   Portal dyskusyjny dla Plone
 Name:		Zope-%{zope_subname}
 Version:	2.2.1
 Release:	1
@@ -31,7 +31,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Portal discussion for Plone.
 
-%description -l pl
+%description -l pl.UTF-8
 Portal dyskusyjny dla Plone.
 
 %prep
